@@ -129,7 +129,7 @@ public:
         nBlockRecalculateAccumulators = ~1; //Trigger a recalculation of accumulators
         nBlockFirstFraudulent = ~1; //First block that bad serials emerged
         nBlockLastGoodCheckpoint = ~1; //Last valid accumulator checkpoint
-        
+
         /**
          * Build the genesis block. Note that the output of the genesis coinbase cannot
          * be spent as it did not originally exist in the database.
@@ -158,8 +158,8 @@ public:
 		hashGenesisBlock = genesis.GetHash();
         assert(hashGenesisBlock == uint256("0x00000fb0adf06d754f9dbc3a64d0c5305ffb6a8c18b97f032665ccb650fc5cec"));
         assert(genesis.hashMerkleRoot == uint256("0x686a44f9f8ab300f046583d5fbfee78bff58770412faf3bc4edcebe8560425e3"));
-		
-		/* 
+
+		/*
        if(genesis.GetHash() != hashGenesisBlock)
        {
           printf("Searching for genesis block...\n");
@@ -189,9 +189,8 @@ printf("genesis.hashMerkleRoot = %s \n", genesis.hashMerkleRoot.ToString().c_str
 	   }
 	   */
 
-		vSeeds.push_back(CDNSSeedData("207.246.110.226", "207.246.110.226")); // Primary DNS Seeder
-		vSeeds.push_back(CDNSSeedData("45.76.76.105", "45.76.76.105")); // Secondary DNS Seeder		
-		
+		vSeeds.push_back(CDNSSeedData("172.81.135.155", "172.81.135.155")); // Primary DNS Seeder
+
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 81);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 90);
@@ -269,18 +268,16 @@ public:
         nBlockRecalculateAccumulators = 9908000; //Trigger a recalculation of accumulators
         nBlockFirstFraudulent = 9891737; //First block that bad serials emerged
         nBlockLastGoodCheckpoint = 9891730; //Last valid accumulator checkpoint
-        
+
         //! Modify the testnet genesis block so the timestamp is valid for a later start.
         genesis.nTime = 1529726039;
         genesis.nNonce = 919546;
-	
+
 	    hashGenesisBlock = genesis.GetHash();
         assert(hashGenesisBlock == uint256("0x0000078207e64a29d453800dbaf1bd2fdf20afc7d5acc50d288ae847a32bb2db"));
 
         vFixedSeeds.clear();
         vSeeds.clear();
-        vSeeds.push_back(CDNSSeedData("testnet.zba.io", "testnet.zba.io"));         // Single node address
-
 
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 77);
